@@ -44,6 +44,8 @@ a{color:var(--brand)}
   radial-gradient(40% 50% at 20% 30%,rgba(255,111,177,.18),transparent 70%),
   radial-gradient(45% 55% at 80% 20%,rgba(59,91,219,.18),transparent 70%);pointer-events:none}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.gate-grid{grid-template-areas:"copy form" "more form";grid-template-rows:auto 1fr;row-gap:0!important}
+.hero-copy{grid-area:copy}.hero-more{grid-area:more}#leadForm{grid-area:form}
 .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:500;color:var(--text)}
 .pill b{color:var(--brand)}
 h1{font-size:clamp(34px,5vw,54px);line-height:1.08;letter-spacing:-.025em;color:var(--ink);font-weight:800;margin:18px 0 18px}
@@ -183,12 +185,15 @@ footer img{height:22px}
 
 @media (max-width:900px){
   .hero .wrap{grid-template-columns:1fr;gap:32px}
+  .gate-grid{grid-template-areas:"copy" "form" "more";grid-template-rows:auto;row-gap:28px!important}
+  .hero-copy .lead{margin-bottom:0}
   .g4,.g5{grid-template-columns:repeat(2,1fr)}
   .g3{grid-template-columns:1fr 1fr}
   .flow,.pdca{grid-template-columns:1fr 1fr}
 }
 @media (max-width:640px){
   .wrap{padding:0 16px}
+  .letters{gap:6px}.letters span{width:40px;height:40px;font-size:18px}
   .hero{padding:40px 0 32px}
   .g2,.g3,.g4,.g5,.roles,.step .cols,.pass,.flow,.pdca{grid-template-columns:1fr}
   .roles div{border-right:0;border-bottom:1px solid var(--line)}
@@ -225,11 +230,13 @@ footer img{height:22px}
 
 <!-- ============ GATE ============ -->
 <section class="hero gate-only" id="top">
-  <div class="wrap">
-    <div>
+  <div class="wrap gate-grid">
+    <div class="hero-copy">
       <span class="pill"><b>Ressource gratuite</b> · Référentiel de 24 pages</span>
       <h1>La méthode <span class="accent">Domaris</span>, détaillée étape par étape.</h1>
       <p class="lead">Le référentiel que nous utilisons pour accompagner chaque projet immobilier, de la première piste au bilan après la décision. 7 étapes, 1 méthode.</p>
+    </div>
+    <div class="hero-more">
       <ul class="bullets">
         <li>Les 7 étapes D·O·M·A·R·I·S, avec questions, vigilances et critères de sortie</li>
         <li>La chaîne de preuve : fait vérifié, déclaration, hypothèse, recommandation</li>
