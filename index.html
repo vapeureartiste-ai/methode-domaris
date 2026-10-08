@@ -816,7 +816,9 @@ form.addEventListener('submit',async e=>{
   const payload=new URLSearchParams({prenom,nom,telephone:tel,consentement:'oui',source:utm()||'linkedin',page:location.href,userAgent:navigator.userAgent});
   try{
     if(SHEET_ENDPOINT){
-      await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',body:payload});
+      // keepalive : l'envoi continue même si on n'attend pas la réponse (Apps Script met ~5 s)
+      const send=fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,body:payload});
+      await Promise.race([send,new Promise(r=>setTimeout(r,1200))]);
     }
   }catch(err){console.warn('Envoi Sheet échoué',err)}
   store(KEY,prenom);
