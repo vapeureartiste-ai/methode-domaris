@@ -18,7 +18,7 @@ function doPost(e) {
       new Date(),
       clean_(p.prenom),
       clean_(p.nom),
-      "'" + clean_(p.telephone), // l'apostrophe garde le 0 initial
+      "'" + String(p.telephone || '').replace(/[^\d+]/g, '').slice(0, 20), // l'apostrophe garde le 0 initial
       clean_(p.consentement),
       clean_(p.source),
       clean_(p.page),
