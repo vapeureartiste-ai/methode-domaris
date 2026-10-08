@@ -36,8 +36,24 @@ function doGet() {
   return ContentService.createTextOutput('OK - endpoint Domaris actif');
 }
 
+// Optionnel : coller ici l'URL de votre Google Sheet. Laisser vide pour qu'un Sheet
+// « Leads · Méthode Domaris » soit créé automatiquement dans votre Google Drive.
+const SHEET_URL = '';
+
+function getSpreadsheet_() {
+  if (SHEET_URL) return SpreadsheetApp.openByUrl(SHEET_URL);
+  const active = SpreadsheetApp.getActiveSpreadsheet(); // script créé depuis le Sheet
+  if (active) return active;
+  const props = PropertiesService.getScriptProperties();
+  const id = props.getProperty('SHEET_ID');
+  if (id) return SpreadsheetApp.openById(id);
+  const ss = SpreadsheetApp.create('Leads · Méthode Domaris');
+  props.setProperty('SHEET_ID', ss.getId());
+  return ss;
+}
+
 function getSheet_() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = getSpreadsheet_();
   let sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) sheet = ss.insertSheet(SHEET_NAME);
   if (sheet.getLastRow() === 0) {
@@ -54,7 +70,8 @@ function clean_(v) {
   return /^[=+\-@]/.test(v) ? "'" + v : v;
 }
 
-// À lancer une fois à la main pour tester : ajoute une ligne de test.
+// À lancer une fois à la main : ajoute une ligne de test et affiche l'URL du Sheet dans le journal.
 function testInsert() {
   doPost({ parameter: { prenom: 'Test', nom: 'Domaris', telephone: '0600000000', consentement: 'oui', source: 'test', page: 'manuel', userAgent: '-' } });
+  Logger.log('Sheet des leads : ' + getSpreadsheet_().getUrl());
 }
