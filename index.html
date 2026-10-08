@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La méthode Domaris</title>
+<meta name="description" content="La méthode Domaris détaillée : 7 étapes, 1 méthode pour accompagner chaque projet immobilier, de la première piste au bilan après la décision.">
+<meta property="og:title" content="La méthode Domaris détaillée">
+<meta property="og:description" content="7 étapes, 1 méthode. Domaris prépare, le conseiller vérifie, le client décide.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#3651BD; --brand-500:oklch(55% .2 264); --brand-50:oklch(97% .014 268); --brand-100:oklch(94% .03 268); --brand-200:oklch(88% .06 267);
+  --ink:oklch(.17 .008 286); --text:oklch(.26 .009 286); --muted:oklch(.5 .012 286); --line:oklch(.92 .004 286);
+  --soft:oklch(.97 .002 286); --bg:#fff; --navy:#0A0E1A; --pink:#E60076;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--brand)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.narrow{max-width:760px}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.top img{height:28px;width:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 15px/1 inherit;font-family:inherit;border:0;border-radius:var(--radius);padding:14px 22px;cursor:pointer;text-decoration:none;transition:transform .15s,opacity .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-blue{background:var(--brand);color:#fff}
+.btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn-sm{padding:10px 14px;font-size:13px;border-radius:8px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:64px 0 40px}
+.hero::before{content:"";position:absolute;inset:-200px -100px auto;height:700px;background:
+  radial-gradient(40% 50% at 20% 30%,rgba(255,111,177,.18),transparent 70%),
+  radial-gradient(45% 55% at 80% 20%,rgba(59,91,219,.18),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:500;color:var(--text)}
+.pill b{color:var(--brand)}
+h1{font-size:clamp(34px,5vw,54px);line-height:1.08;letter-spacing:-.025em;color:var(--ink);font-weight:800;margin:18px 0 18px}
+h1 .accent,h2 .accent{color:var(--brand)}
+.lead{font-size:18px;color:var(--muted);max-width:540px;margin:0 0 28px}
+.bullets{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:10px}
+.bullets li{display:flex;gap:10px;align-items:flex-start;font-weight:500;color:var(--ink)}
+.bullets li::before{content:"";flex:0 0 20px;height:20px;margin-top:2px;border-radius:6px;background:var(--brand-100) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' fill='none' stroke='%233651BD' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.letters{display:flex;gap:8px;flex-wrap:wrap}
+.letters span{width:46px;height:46px;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:20px;color:#fff;background:var(--brand)}
+.letters span:nth-child(-n+2){background:var(--ink)}
+.letters span:nth-child(n+5){background:var(--brand-500)}
+
+/* form card */
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 20px 50px -20px rgba(54,81,189,.25)}
+.card h2{font-size:22px;margin:0 0 6px;color:var(--ink);letter-spacing:-.01em}
+.card p.sub{margin:0 0 20px;color:var(--muted);font-size:14px}
+.field{margin-bottom:14px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+input[type=text],input[type=tel]{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--soft);color:var(--ink);transition:border .15s,box-shadow .15s,background .15s}
+input:focus{outline:none;border-color:var(--brand);background:#fff;box-shadow:0 0 0 4px var(--brand-100)}
+input.err{border-color:#d33;background:#fff5f5}
+.err-msg{color:#c22;font-size:12.5px;margin-top:5px;display:none}
+.field.invalid .err-msg{display:block}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--muted);line-height:1.45;margin:6px 0 18px;font-weight:400}
+.consent input{margin-top:2px;accent-color:var(--brand);width:16px;height:16px;flex:0 0 16px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.card .btn{width:100%;padding:16px}
+.small{font-size:12px;color:var(--muted);margin:12px 0 0;text-align:center}
+.form-error{display:none;background:#fff5f5;color:#c22;border-radius:10px;padding:10px 12px;font-size:13px;margin-bottom:12px}
+
+/* proof strip */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:22px 20px;text-align:center}
+.strip b{display:block;font-size:22px;color:var(--ink)}
+.strip span{font-size:13px;color:var(--muted)}
+
+/* method content */
+.locked{display:none}
+.unlocked .locked{display:block}
+.unlocked .gate-only{display:none}
+section.s{padding:72px 0;border-top:1px solid var(--line)}
+section.s.alt{background:var(--soft)}
+.kicker{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--brand);margin-bottom:10px}
+h2{font-size:clamp(26px,3.6vw,36px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:0 0 14px;font-weight:700}
+h3{font-size:18px;color:var(--ink);margin:0 0 8px;font-weight:600}
+.intro{color:var(--muted);font-size:17px;max-width:720px;margin:0 0 36px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+.box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.box p{margin:0;color:var(--muted);font-size:14.5px}
+.num{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--brand-100);color:var(--brand);font-weight:700;font-size:13px;margin-bottom:10px}
+.tag{display:inline-block;font-size:12.5px;font-weight:500;padding:5px 10px;border-radius:999px;background:var(--brand-50);color:var(--brand);border:1px solid var(--brand-100);margin:0 6px 6px 0}
+.tag.grey{background:var(--soft);color:var(--text);border-color:var(--line)}
+
+.dark{background:var(--navy);color:#cfd3e0;border-radius:20px;padding:36px;position:relative;overflow:hidden}
+.dark::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;background:radial-gradient(circle,rgba(59,91,219,.45),transparent 65%)}
+.dark h2,.dark h3{color:#fff}
+.dark .accent{color:#8ea2ff}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;position:relative;z-index:1;margin-top:24px}
+.flow div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:16px}
+.flow b{color:#fff;display:block;margin-bottom:4px}
+.flow small{color:#9aa3bd;font-size:13px}
+.flow div:last-child{background:var(--brand);border-color:var(--brand)}
+.flow div:last-child small{color:#dfe5ff}
+
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.roles div{padding:22px;border-right:1px solid var(--line)}
+.roles div:last-child{border-right:0}
+.roles b{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand)}
+.roles p{margin:6px 0 0;font-weight:600;color:var(--ink);font-size:17px}
+
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:14.5px}
+th{background:var(--soft);text-align:left;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:12px 16px;font-weight:700}
+td{padding:14px 16px;border-top:1px solid var(--line);vertical-align:top}
+td .l{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--brand);color:#fff;font-weight:800;margin-right:10px;vertical-align:middle}
+td strong{color:var(--ink)}
+.tbl{overflow-x:auto;border-radius:16px}
+
+/* steps */
+.stepnav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.stepnav button{font:inherit;font-weight:600;font-size:14px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:8px;align-items:center}
+.stepnav button span{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:6px;background:var(--brand-100);color:var(--brand);font-weight:800;font-size:13px}
+.stepnav button[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.stepnav button[aria-selected=true] span{background:var(--brand);color:#fff}
+.step{display:none;background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px}
+.step.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.step-head{display:flex;gap:18px;align-items:center;margin-bottom:12px}
+.step-head .big{width:64px;height:64px;border-radius:16px;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:32px;font-weight:800;flex:0 0 64px}
+.step-head small{color:var(--brand);font-weight:700;letter-spacing:.12em;font-size:12px;text-transform:uppercase}
+.step-head h3{font-size:28px;margin:2px 0 0}
+.step .desc{color:var(--muted);font-size:16.5px;margin:0 0 24px}
+.step .desc b{color:var(--ink)}
+.step .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.blk{border:1px solid var(--line);border-radius:14px;padding:18px}
+.blk h4{margin:0 0 10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.blk ul{margin:0;padding-left:18px;font-size:14.5px}
+.blk li{margin:3px 0}
+.blk.q li{list-style:none;margin-left:-18px;font-style:italic;color:var(--ink)}
+.blk.warn{background:#fff8f2;border-color:#ffe2c7}
+.blk.warn h4{color:#b45309}
+.blk.warn p{margin:0;font-size:14.5px}
+.pass{margin-top:16px;background:var(--brand-50);border:1px solid var(--brand-100);border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pass h4{margin:0 0 6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand)}
+.pass p{margin:0;font-size:14.5px;color:var(--ink)}
+.pass .qp{font-weight:600;font-size:16px}
+.step-foot{display:flex;justify-content:space-between;margin-top:20px}
+
+.timeline{display:grid;gap:10px}
+.timeline .it{display:grid;grid-template-columns:52px 1fr 1fr;gap:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;align-items:start}
+.timeline .it .l{width:40px;height:40px;border-radius:10px;background:var(--brand);color:#fff;font-weight:800;display:grid;place-items:center}
+.timeline .it b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+.timeline .it p{margin:0;font-size:14px;color:var(--muted)}
+.timeline .it .tr{border-left:2px solid var(--brand-100);padding-left:14px}
+
+.pdca{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pdca .box b{font-size:28px;color:var(--brand);display:block;line-height:1}
+
+.cta{padding:80px 0}
+.cta .dark{text-align:center;padding:56px 28px}
+.cta .dark p{max-width:560px;margin:0 auto 26px;position:relative;z-index:1}
+.cta .dark h2{position:relative;z-index:1}
+.cta .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-white{background:#fff;color:var(--navy)}
+.btn-outline-w{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
+
+.welcome{display:none;background:var(--brand-50);border-bottom:1px solid var(--brand-100)}
+.unlocked .welcome{display:block}
+.welcome .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:16px 20px;flex-wrap:wrap}
+.welcome p{margin:0;font-weight:600;color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding:32px 0;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer img{height:22px}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:32px}
+  .g4,.g5{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:1fr 1fr}
+  .flow,.pdca{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .hero{padding:40px 0 32px}
+  .g2,.g3,.g4,.g5,.roles,.step .cols,.pass,.flow,.pdca{grid-template-columns:1fr}
+  .roles div{border-right:0;border-bottom:1px solid var(--line)}
+  .row2{grid-template-columns:1fr}
+  .strip .wrap{grid-template-columns:1fr;gap:10px}
+  .card{padding:22px}
+  .step{padding:22px}
+  .timeline .it{grid-template-columns:44px 1fr}
+  .timeline .it .tr{grid-column:2;border-left:0;padding-left:0;border-top:1px dashed var(--line);padding-top:8px}
+  section.s{padding:52px 0}
+  .dark{padding:26px}
+  .top .btn-sm.hide-m{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="https://domaris.immo" target="_blank" rel="noopener"><img src="assets/logo.svg" alt="Domaris"></a>
+    <div style="display:flex;gap:8px">
+      <a class="btn btn-sm btn-ghost locked-inline hide-m" href="assets/Domaris_Methode_detaillee.pdf" download id="topPdf" style="display:none">Télécharger le PDF</a>
+      <a class="btn btn-sm btn-dark" href="https://domaris.immo" target="_blank" rel="noopener">Découvrir Domaris</a>
+    </div>
+  </div>
+</header>
+
+<div class="welcome">
+  <div class="wrap">
+    <p id="welcomeText">C'est débloqué. Voici la méthode Domaris en entier.</p>
+    <a class="btn btn-sm btn-blue" href="assets/Domaris_Methode_detaillee.pdf" download>Télécharger le PDF (24 pages)</a>
+  </div>
+</div>
+
+<!-- ============ GATE ============ -->
+<section class="hero gate-only" id="top">
+  <div class="wrap">
+    <div>
+      <span class="pill"><b>Ressource gratuite</b> · Référentiel de 24 pages</span>
+      <h1>La méthode <span class="accent">Domaris</span>, détaillée étape par étape.</h1>
+      <p class="lead">Le référentiel que nous utilisons pour accompagner chaque projet immobilier, de la première piste au bilan après la décision. 7 étapes, 1 méthode.</p>
+      <ul class="bullets">
+        <li>Les 7 étapes D·O·M·A·R·I·S, avec questions, vigilances et critères de sortie</li>
+        <li>La chaîne de preuve : fait vérifié, déclaration, hypothèse, recommandation</li>
+        <li>Le parcours complet d'une vente, de la demande à l'acte</li>
+        <li>La fiche « point de décision partagé » à imprimer</li>
+      </ul>
+      <div class="letters" aria-label="DOMARIS"><span>D</span><span>O</span><span>M</span><span>A</span><span>R</span><span>I</span><span>S</span></div>
+    </div>
+
+    <form class="card" id="leadForm" novalidate>
+      <h2>Accède à la méthode</h2>
+      <p class="sub">Renseigne tes coordonnées et la méthode s'affiche juste en dessous.</p>
+      <div class="form-error" id="formError"></div>
+      <div class="row2">
+        <div class="field">
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
+          <div class="err-msg">Indique ton prénom.</div>
+        </div>
+        <div class="field">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" autocomplete="family-name" required>
+          <div class="err-msg">Indique ton nom.</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="tel">Téléphone</label>
+        <input type="tel" id="tel" name="telephone" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" required>
+        <div class="err-msg">Indique un numéro valide (ex. 06 12 34 56 78).</div>
+      </div>
+      <div class="hp" aria-hidden="true"><label for="website">Ne pas remplir</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="field">
+        <label class="consent"><input type="checkbox" id="consent" name="consent" required>
+          <span>J'accepte d'être recontacté(e) par téléphone par l'équipe Domaris au sujet de la méthode et de ses services. Je peux retirer ce consentement à tout moment.</span></label>
+        <div class="err-msg" style="margin-top:-12px;margin-bottom:12px">Ton accord est nécessaire pour accéder à la méthode.</div>
+      </div>
+      <button class="btn btn-dark" type="submit" id="submitBtn">Recevoir la méthode →</button>
+      <p class="small">Tes données servent uniquement à te recontacter. Elles ne sont ni revendues ni partagées.</p>
+    </form>
+  </div>
+</section>
+
+<div class="strip gate-only">
+  <div class="wrap">
+    <div><b>7 étapes</b><span>de la détection au suivi</span></div>
+    <div><b>6 types de projets</b><span>vente, achat, investissement, location…</span></div>
+    <div><b>1 règle</b><span>aucune donnée seule ne décide</span></div>
+  </div>
+</div>
+
+<!-- ============ METHOD (unlocked) ============ -->
+<main class="locked" id="methode">
+
+  <section class="hero" style="padding-bottom:56px">
+    <div class="wrap narrow" style="display:block">
+      <span class="pill"><b>Référentiel · Méthode</b> · Édition de travail, septembre 2026</span>
+      <h1>La méthode <span class="accent">Domaris</span> détaillée</h1>
+      <p class="lead">Référentiel opérationnel aligné sur la formation des agents immobiliers. De la première piste au bilan après la décision.</p>
+      <div class="letters" style="margin-bottom:20px"><span>D</span><span>O</span><span>M</span><span>A</span><span>R</span><span>I</span><span>S</span></div>
+      <div>
+        <span class="tag grey">Vente</span><span class="tag grey">Achat</span><span class="tag grey">Investissement</span><span class="tag grey">Location</span><span class="tag grey">Gestion d'un actif</span><span class="tag grey">Projets professionnels</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement -->
+  <section class="s">
+    <div class="wrap">
+      <span class="kicker">L'engagement de la méthode</span>
+      <h2>À chaque étape, le client comprend…</h2>
+      <p class="intro">La méthode relie les compétences de la formation de 28 heures à des gestes de terrain, des points de contrôle et des traces lisibles par le client.</p>
+      <div class="grid g5">
+        <div class="box"><span class="num">1</span><h3>où il en est</h3></div>
+        <div class="box"><span class="num">2</span><h3>ce qui est établi</h3></div>
+        <div class="box"><span class="num">3</span><h3>ce qui reste à vérifier</h3></div>
+        <div class="box"><span class="num">4</span><h3>quelles options existent</h3></div>
+        <div class="box"><span class="num">5</span><h3>quelle décision ou action vient ensuite</h3></div>
+      </div>
+
+      <h2 style="margin-top:56px">Qui fait quoi</h2>
+      <div class="roles">
+        <div><b>Domaris</b><p>prépare et structure l'information</p></div>
+        <div><b>Le conseiller</b><p>vérifie, conseille et contrôle</p></div>
+        <div><b>Le client</b><p>exprime ses priorités, choisit et confirme</p></div>
+      </div>
+
+      <div class="dark" style="margin-top:56px">
+        <span class="kicker" style="color:#8ea2ff;position:relative;z-index:1">La règle qui traverse toute la méthode</span>
+        <h2 style="position:relative;z-index:1">Aucune donnée seule <span class="accent">ne décide.</span></h2>
+        <p style="position:relative;z-index:1;max-width:680px;margin:0">Une donnée déclenche une vérification. Le contexte, les preuves, le jugement professionnel et les priorités confirmées conduisent à une recommandation. Le client garde la décision qui lui appartient.</p>
+        <div class="flow">
+          <div><b>Une donnée</b><small>signal, annonce ou donnée de marché</small></div>
+          <div><b>Une vérification</b><small>source, date, fiabilité</small></div>
+          <div><b>Une recommandation</b><small>contexte, preuves, jugement, priorités confirmées</small></div>
+          <div><b>La décision</b><small>qui appartient au client</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repères rapides -->
+  <section class="s alt">
+    <div class="wrap">
+      <span class="kicker">Repères rapides</span>
+      <h2>Sept étapes, un mot : <span class="accent">DOMARIS</span></h2>
+      <p class="intro">Pour chaque étape, la question de contrôle à se poser et la trace que le client doit pouvoir retrouver.</p>
+      <div class="tbl">
+      <table>
+        <thead><tr><th>Étape</th><th>Question de contrôle</th><th>Trace client</th></tr></thead>
+        <tbody>
+          <tr><td><span class="l">D</span><strong>Détecter</strong><br><small>Repérer sans présumer</small></td><td>Quel besoin ou actif mérite vérification ?</td><td>Piste qualifiée, source et niveau de vérification</td></tr>
+          <tr><td><span class="l">O</span><strong>Organiser</strong><br><small>Préparer une mission compréhensible</small></td><td>Qui décide, avec quels éléments et quel calendrier ?</td><td>Brief, rôles, pièces et jalons</td></tr>
+          <tr><td><span class="l">M</span><strong>Mesurer</strong><br><small>Établir un diagnostic motivé</small></td><td>Quelle est la situation et quelles preuves la décrivent ?</td><td>Diagnostic motivé, limites et inconnues</td></tr>
+          <tr><td><span class="l">A</span><strong>Aligner</strong><br><small>Confirmer les critères de réussite</small></td><td>Qu'est-ce qui compte le plus pour le client ?</td><td>Priorités et critères confirmés</td></tr>
+          <tr><td><span class="l">R</span><strong>Recommander</strong><br><small>Comparer les options et leurs compromis</small></td><td>Quelles options réalistes et quels compromis ?</td><td>Scénarios comparés et décision choisie</td></tr>
+          <tr><td><span class="l">I</span><strong>Intervenir</strong><br><small>Exécuter et coordonner le plan retenu</small></td><td>Quelle action validée faut-il exécuter ?</td><td>Plan d'action, responsable, date, compte rendu</td></tr>
+          <tr><td><span class="l">S</span><strong>Suivre</strong><br><small>Faire le bilan, ajuster ou clôturer</small></td><td>Le résultat répond-il au projet ? Que faut-il ajuster ?</td><td>Bilan, prochaine décision, clôture ou suite</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapitre 1 -->
+  <section class="s">
+    <div class="wrap">
+      <span class="kicker">Chapitre 1</span>
+      <h2>Fondements et règles de travail</h2>
+      <p class="intro">Domaris aide le conseiller à repérer des sujets utiles, organiser les preuves, préparer des analyses et garder le fil du dossier.</p>
+
+      <div class="grid g2">
+        <div class="box">
+          <h3>Une méthode de conseil, pas une promesse automatique</h3>
+          <p style="margin-bottom:12px">La méthode ne garantit pas :</p>
+          <span class="tag grey">un prix</span><span class="tag grey">un délai de vente</span><span class="tag grey">un rendement</span><span class="tag grey">l'obtention d'un financement</span>
+        </div>
+        <div class="box">
+          <h3>Ce dont dépendent les résultats</h3>
+          <p style="margin-bottom:12px">Le résultat d'un dossier repose sur :</p>
+          <span class="tag">le bien</span><span class="tag">le marché</span><span class="tag">les décisions du client</span><span class="tag">les données disponibles</span><span class="tag">l'intervention des professionnels compétents</span>
+        </div>
+      </div>
+
+      <h3 style="margin:48px 0 16px;font-size:22px">Cinq règles constantes sur chaque dossier</h3>
+      <div class="grid g5">
+        <div class="box"><span class="num">1</span><h3>Le projet d'abord</h3><p>Partir du projet, des besoins et des contraintes du client, plutôt que d'une caractéristique isolée du bien ou d'un signal.</p></div>
+        <div class="box"><span class="num">2</span><h3>Des informations datées et qualifiées</h3><p>Séparer les faits vérifiés, les déclarations, les hypothèses et les recommandations.</p></div>
+        <div class="box"><span class="num">3</span><h3>Des limites visibles</h3><p>Présenter les limites des données et ce qui demande une visite, une pièce, un devis ou un spécialiste.</p></div>
+        <div class="box"><span class="num">4</span><h3>Des validations explicites</h3><p>Faire valider par le client et le professionnel responsable les décisions qui engagent le dossier.</p></div>
+        <div class="box"><span class="num">5</span><h3>Une trace complète</h3><p>Tracer choix, actions, refus, oppositions, responsables et jalons. Clore les rappels devenus inutiles.</p></div>
+      </div>
+
+      <h3 style="margin:48px 0 8px;font-size:22px">Les pratiques auxquelles elle emprunte des outils</h3>
+      <p style="color:var(--muted);margin:0 0 16px;font-size:14.5px">La méthode assemble ces pratiques pour les adapter aux dossiers immobiliers ; elle ne revendique aucune certification ni affiliation à ces référentiels.</p>
+      <div class="grid g5">
+        <div class="box"><h3>QQOQCP</h3><p>Découverte structurée pour comprendre la situation.</p></div>
+        <div class="box"><h3>Vente-conseil</h3><p>Relier une proposition aux besoins exprimés.</p></div>
+        <div class="box"><h3>Objectifs SMART</h3><p>Rendre l'action et son échéance observables.</p></div>
+        <div class="box"><h3>Analyse comparative</h3><p>Raisonner à partir de références pertinentes.</p></div>
+        <div class="box"><h3>Boucle PDCA</h3><p>Planifier, faire, vérifier, ajuster.</p></div>
+      </div>
+
+      <h3 style="margin:48px 0 8px;font-size:22px">La chaîne de preuve</h3>
+      <p style="color:var(--muted);margin:0 0 16px;font-size:14.5px">Chaque information porte un statut. Le client voit ce qui est établi, rapporté, à tester, conseillé et choisi.</p>
+      <div class="tbl">
+      <table>
+        <thead><tr><th>Statut</th><th>Définition</th><th>Exemple de formulation</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Fait vérifié</strong></td><td>Information confirmée par observation, pièce ou source fiable, avec date.</td><td><em>« Le diagnostic transmis le 12 septembre indique… »</em></td></tr>
+          <tr><td><strong>Déclaration</strong></td><td>Information rapportée par le client ou un tiers et non vérifiée par ailleurs.</td><td><em>« Vous indiquez souhaiter déménager avant le printemps. »</em></td></tr>
+          <tr><td><strong>Hypothèse</strong></td><td>Interprétation ou explication à tester.</td><td><em>« Le faible nombre de visites pourrait être lié au positionnement ou aux photos. »</em></td></tr>
+          <tr><td><strong>Recommandation</strong></td><td>Option motivée par les éléments disponibles et reliée aux priorités.</td><td><em>« Je recommande de tester cette présentation puis de faire un point le… »</em></td></tr>
+          <tr><td><strong>Décision</strong></td><td>Choix qui revient au client ou au professionnel habilité.</td><td><em>« Vous confirmez le scénario retenu et la date de revue. »</em></td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="grid g2" style="margin-top:48px;align-items:start">
+        <div>
+          <h3 style="font-size:22px">Le point de décision partagé</h3>
+          <p style="color:var(--muted)">Chaque étape importante se ferme par cinq informations. Si les éléments essentiels sont insuffisants, le dossier reste en vérification.</p>
+          <div class="grid" style="gap:8px">
+            <div class="box" style="padding:14px 18px"><span class="num" style="margin:0 10px 0 0">1</span><strong>Ce que nous savons</strong></div>
+            <div class="box" style="padding:14px 18px"><span class="num" style="margin:0 10px 0 0">2</span><strong>Ce que nous ne savons pas</strong></div>
+            <div class="box" style="padding:14px 18px"><span class="num" style="margin:0 10px 0 0">3</span><strong>Les options</strong></div>
+            <div class="box" style="padding:14px 18px"><span class="num" style="margin:0 10px 0 0">4</span><strong>La décision attendue</strong></div>
+            <div class="box" style="padding:14px 18px"><span class="num" style="margin:0 10px 0 0">5</span><strong>L'action suivante, avec un responsable et une date</strong></div>
+          </div>
+        </div>
+        <div class="box" style="background:var(--brand-50);border-color:var(--brand-100)">
+          <h3>Les éléments essentiels sont-ils suffisants ?</h3>
+          <p style="margin:12px 0"><strong style="color:var(--brand)">Oui</strong> : l'étape peut se fermer selon son critère de sortie.</p>
+          <p><strong style="color:#b45309">Non</strong> : le dossier reste en vérification. Pas de recommandation ferme sur une base fragile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapitre 2 -->
+  <section class="s alt">
+    <div class="wrap">
+      <span class="kicker">Chapitre 2</span>
+      <h2>La chaîne de valeur immobilière</h2>
+      <p class="intro">Les étapes forment un cadre commun. Les tâches et documents changent selon qu'il s'agit de vendre, acheter, investir, louer, gérer un portefeuille ou céder un actif professionnel.</p>
+      <div class="tbl">
+      <table>
+        <thead><tr><th>Moment du parcours</th><th>Décision centrale</th><th>Exemples de mission</th></tr></thead>
+        <tbody>
+          <tr><td><strong>01 · Entrée et détection</strong></td><td>Y a-t-il une raison vérifiable d'ouvrir un échange ou une mission ?</td><td>Demande entrante, recommandation, besoin exprimé, signal d'actif</td></tr>
+          <tr><td><strong>02 · Cadrage</strong></td><td>Quel résultat le client cherche-t-il et quelles sont ses contraintes ?</td><td>Vente, recherche d'achat, investissement, location, arbitrage</td></tr>
+          <tr><td><strong>03 · Diagnostic</strong></td><td>Que montrent les pièces, le bien et le marché ?</td><td>Valeur, adéquation, travaux, charges, risques à vérifier, potentiel</td></tr>
+          <tr><td><strong>04 · Choix de stratégie</strong></td><td>Quelle option sert le mieux les priorités confirmées ?</td><td>Prix et délai, usage et secteur, rendement et risque, visibilité et discrétion</td></tr>
+          <tr><td><strong>05 · Action et coordination</strong></td><td>Qui fait quoi, quand, avec quelle autorisation ?</td><td>Préparation, diffusion, recherche, visites, offre, pièces, intervenants</td></tr>
+          <tr><td><strong>06 · Suivi et bilan</strong></td><td>Le résultat répond-il au projet et que faut-il ajuster ?</td><td>Ajustement, transaction, mise en location, bilan et fidélisation</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapitre 3 : étapes -->
+  <section class="s" id="etapes">
+    <div class="wrap">
+      <span class="kicker">Chapitre 3</span>
+      <h2>Les sept étapes détaillées</h2>
+      <p class="intro">Chaque étape a ses actions, ses questions, sa trace, ses points de vigilance et son critère de sortie. Elle se ferme par une question de passage. Une information nouvelle peut toujours ramener à Mesurer, Aligner ou Recommander.</p>
+      <div class="stepnav" role="tablist" id="stepnav"></div>
+      <div id="steps"></div>
+    </div>
+  </section>
+
+  <!-- Chapitre 4 -->
+  <section class="s alt">
+    <div class="wrap">
+      <span class="kicker">Chapitre 4</span>
+      <h2>La méthode selon le profil client</h2>
+      <p class="intro">Les sept étapes ne changent pas. La décision à éclairer, les preuves et les indicateurs s'adaptent à la mission.</p>
+      <div class="tbl">
+      <table>
+        <thead><tr><th>Profil</th><th>Départ et mesure</th><th>Décision à éclairer</th><th>Indicateurs possibles</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Vendeur</strong></td><td>Projet, bien, pièces, comparables, concurrence et échéance.</td><td>Prix et stratégie de commercialisation.</td><td>Demandes qualifiées, visites, retours, offres, délais entre jalons</td></tr>
+          <tr><td><strong>Acquéreur</strong></td><td>Usage, décideurs, budget global, critères, financement et calendrier.</td><td>Adéquation du bien et niveau d'offre.</td><td>Biens étudiés, visites utiles, critères respectés, étapes de financement</td></tr>
+          <tr><td><strong>Investisseur</strong></td><td>Horizon, coût total, loyers, vacance, charges, travaux, risque et sortie.</td><td>Rendement, financement et scénario patrimonial.</td><td>Loyer net hypothétique/réalisé, coûts, vacance, hypothèses confirmées</td></tr>
+          <tr><td><strong>Bailleur</strong></td><td>Bien, cible locataire, état, loyer, contraintes et gestion.</td><td>Préparation, niveau de loyer, mode de gestion.</td><td>Délai de location, vacance, coûts, demandes, incidents</td></tr>
+          <tr><td><strong>Professionnel / commerce</strong></td><td>Actif, activité, flux, contraintes d'exploitation, parties prenantes.</td><td>Cession, location, valeur d'usage ou arbitrage.</td><td>Jalons, documents, délais, conditions obtenues et autorisations</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="color:var(--muted);font-size:14px;margin-top:12px">Les indicateurs servent à piloter et apprendre, pas à garantir un résultat.</p>
+    </div>
+  </section>
+
+  <!-- Chapitre 5 -->
+  <section class="s">
+    <div class="wrap">
+      <span class="kicker">Chapitre 5</span>
+      <h2>Le parcours complet d'une vente</h2>
+      <p class="intro">Cas fictif : une propriétaire souhaite vendre une maison et prévoit un déménagement. L'exemple montre les traces attendues ; les valeurs, délais et obligations dépendent du dossier réel.</p>
+      <div class="timeline">
+        <div class="it"><span class="l">D</span><div><b>Détecter</b><p>La propriétaire demande elle-même une estimation via le site. L'agent enregistre la source et la date.</p></div><div class="tr"><b>Trace</b><p>Demande entrante confirmée ; rendez-vous proposé selon le canal demandé.</p></div></div>
+        <div class="it"><span class="l">O</span><div><b>Organiser</b><p>Découverte du projet, décideurs, calendrier, pièces et visite du bien.</p></div><div class="tr"><b>Trace</b><p>Brief, liste de pièces et date de visite ; priorité confirmée.</p></div></div>
+        <div class="it"><span class="l">M</span><div><b>Mesurer</b><p>Analyse du bien et des ventes comparables ; vérification des annonces concurrentes et diagnostics disponibles.</p></div><div class="tr"><b>Trace</b><p>Avis argumenté, fourchette, comparables, hypothèses et éléments à faire vérifier.</p></div></div>
+        <div class="it"><span class="l">A</span><div><b>Aligner</b><p>La cliente hiérarchise délai, prix et discrétion ; elle confirme le résultat attendu.</p></div><div class="tr"><b>Trace</b><p>Critères de réussite et date de revue consignés.</p></div></div>
+        <div class="it"><span class="l">R</span><div><b>Recommander</b><p>Deux scénarios de commercialisation sont présentés avec rythme, visibilité, risque et point de revue.</p></div><div class="tr"><b>Trace</b><p>Recommandation expliquée ; choix de la cliente ; autorisations clarifiées.</p></div></div>
+        <div class="it"><span class="l">I</span><div><b>Intervenir</b><p>Préparation de l'annonce, photos, diffusion, qualification des demandes et organisation des visites.</p></div><div class="tr"><b>Trace</b><p>Annonce relue et validée ; retours et offres enregistrés.</p></div></div>
+        <div class="it"><span class="l">S</span><div><b>Suivre</b><p>Bilan périodique des demandes, visites, retours et offres ; ajustement avec accord ; coordination avec le notaire jusqu'à l'acte.</p></div><div class="tr"><b>Trace</b><p>Prochain jalon visible ; pièces et responsabilités suivies ; bilan après la décision.</p></div></div>
+      </div>
+
+      <h3 style="margin:40px 0 14px;font-size:22px">Ce que le client doit pouvoir retrouver à tout moment</h3>
+      <div class="grid g5">
+        <div class="box"><p>Le dernier état vérifié du dossier.</p></div>
+        <div class="box"><p>La décision ou la pièce attendue et la personne qui s'en charge.</p></div>
+        <div class="box"><p>La prochaine échéance et le moyen de poser une question.</p></div>
+        <div class="box"><p>Les limites de toute estimation, analyse ou projection.</p></div>
+        <div class="box"><p>La trace de son choix et la stratégie convenue.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapitre 6 -->
+  <section class="s alt">
+    <div class="wrap">
+      <span class="kicker">Chapitre 6</span>
+      <h2>Outils et documents Domaris</h2>
+      <p class="intro">Douze usages, douze questions. Les documents sont utiles lorsqu'ils répondent à une question, soutiennent une décision ou facilitent une étape. Leur disponibilité dépend des modules, données, intégrations et validations activés.</p>
+      <div class="grid g3">
+        <div class="box"><span class="tag">Visibilité d'annonce</span><h3>Rapport d'audit d'annonce</h3><p>Où le parcours bloque-t-il : visibilité, contacts, visites ou offres ?</p></div>
+        <div class="box"><span class="tag">Visibilité d'annonce</span><h3>Annonce réécrite et variantes de titre</h3><p>Comment présenter fidèlement le bien pour chaque canal ?</p></div>
+        <div class="box"><span class="tag">Visibilité d'annonce</span><h3>Tableau concurrentiel et calendrier éditorial</h3><p>Quels biens et contenus concurrencent l'annonce ? Quelle action tester ?</p></div>
+        <div class="box"><span class="tag">Analyse de marché</span><h3>Rapport local et dynamique de secteur</h3><p>Quelles tendances et limites sont utiles à la mission ?</p></div>
+        <div class="box"><span class="tag">Estimation</span><h3>Rapport de justification de prix</h3><p>Quelles références et raisons soutiennent la fourchette ?</p></div>
+        <div class="box"><span class="tag">Prospection</span><h3>Fiche signal et argumentaire de contact</h3><p>Le signal est-il assez fiable et quelle démarche est appropriée ?</p></div>
+        <div class="box"><span class="tag">Découverte</span><h3>Trame R0 et grille QQOQCP acheteur/vendeur</h3><p>Le projet, les décideurs et les critères sont-ils compris ?</p></div>
+        <div class="box"><span class="tag">Suivi</span><h3>Séquence de suivi et recommandation du prochain point</h3><p>Quelle relance est convenue, utile, autorisée et quand s'arrête-t-elle ?</p></div>
+        <div class="box"><span class="tag">Négociation</span><h3>Fiche de présentation d'offre et compte rendu</h3><p>Les conditions et la décision du client sont-elles fidèlement tracées ?</p></div>
+        <div class="box"><span class="tag">Transaction</span><h3>Checklist de pièces et jalons de compromis</h3><p>Quel professionnel doit fournir ou valider l'élément suivant ?</p></div>
+        <div class="box"><span class="tag">Portefeuille</span><h3>Tableau de bord des mandats et échéances</h3><p>Quelle est la prochaine action par dossier et quel rappel doit s'arrêter ?</p></div>
+        <div class="box"><span class="tag">Partenariat / fidélité</span><h3>Fiche de co-mandat et suivi post-vente</h3><p>Qui intervient, quel partage est convenu, et quel suivi le client souhaite ?</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapitre 7 -->
+  <section class="s">
+    <div class="wrap">
+      <span class="kicker">Chapitre 7</span>
+      <h2>Mesure de la qualité et amélioration continue</h2>
+      <p class="intro">Un tableau de bord orienté service, une boucle d'amélioration et des automatisations qui savent s'arrêter.</p>
+      <div class="tbl">
+      <table>
+        <thead><tr><th>Question de suivi</th><th>Indicateurs possibles</th><th>Décision que cela aide à prendre</th></tr></thead>
+        <tbody>
+          <tr><td><strong>La piste est-elle pertinente ?</strong></td><td>Proportion de pistes vérifiées, délai entre signal et vérification, taux de doublons corrigés</td><td>Poursuivre, corriger ou arrêter une source.</td></tr>
+          <tr><td><strong>Le client comprend-il le conseil ?</strong></td><td>Brief confirmé, critères reformulés, décisions consignées, satisfaction sur la clarté</td><td>Reprendre la découverte ou clarifier les options.</td></tr>
+          <tr><td><strong>La commercialisation avance-t-elle ?</strong></td><td>Vues, contacts qualifiés, visites, retours, offres sur une période précisée</td><td>Tester présentation, information, ciblage ou prix avec accord.</td></tr>
+          <tr><td><strong>Le portefeuille est-il suivi ?</strong></td><td>Dossiers ayant un responsable, un prochain jalon et un statut à jour</td><td>Répartir les actions et supprimer les rappels obsolètes.</td></tr>
+          <tr><td><strong>La relation est-elle bien clôturée ?</strong></td><td>Bilan effectué, échéance utile communiquée, opposition appliquée, suite acceptée</td><td>Clore, maintenir un suivi demandé ou solliciter un retour libre.</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3 style="margin:48px 0 14px;font-size:22px">La boucle d'amélioration PDCA</h3>
+      <div class="pdca">
+        <div class="box"><b>1</b><h3 style="margin-top:10px">Planifier</h3><p>Que voulons-nous améliorer et selon quel critère ?</p><p style="margin-top:8px;color:var(--brand);font-size:13px">Hypothèse, objectif, mesure et date</p></div>
+        <div class="box"><b>2</b><h3 style="margin-top:10px">Faire</h3><p>Quelle action validée est menée ?</p><p style="margin-top:8px;color:var(--brand);font-size:13px">Action réelle, responsable, date</p></div>
+        <div class="box"><b>3</b><h3 style="margin-top:10px">Vérifier</h3><p>Quel résultat observe-t-on sur la période définie ?</p><p style="margin-top:8px;color:var(--brand);font-size:13px">Données, retours clients et limites</p></div>
+        <div class="box"><b>4</b><h3 style="margin-top:10px">Ajuster</h3><p>Que maintient-on, modifie-t-on ou arrête-t-on ?</p><p style="margin-top:8px;color:var(--brand);font-size:13px">Décision et prochaine revue</p></div>
+      </div>
+
+      <h3 style="margin:48px 0 14px;font-size:22px">Automatiser sans perdre la main</h3>
+      <div class="grid g5">
+        <div class="box"><span class="num">1</span><h3>Un déclencheur explicite</h3><p>Associé à une finalité métier compréhensible.</p></div>
+        <div class="box"><span class="num">2</span><h3>Un message relu</h3><p>Un responsable, une version relue et un contexte correct.</p></div>
+        <div class="box"><span class="num">3</span><h3>Un contrôle avant sortie</h3><p>L'agent contrôle brouillons, messages et actions engageantes.</p></div>
+        <div class="box"><span class="num">4</span><h3>Une séquence qui peut s'annuler</h3><p>Sur une réponse, une demande d'arrêt, un changement de statut ou une échéance dépassée.</p></div>
+        <div class="box"><span class="num">5</span><h3>Des rappels qui se ferment</h3><p>Quand ils ne sont plus utiles ; les oppositions sont propagées.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapitre 8 -->
+  <section class="s alt">
+    <div class="wrap">
+      <span class="kicker">Chapitre 8</span>
+      <h2>Correspondance avec la formation de 28 heures</h2>
+      <p class="intro">La formation développe la méthode par compétences. Après chaque demi-journée, le participant repart avec un livrable réutilisable et un comportement observable.</p>
+      <div class="grid g4" style="margin-bottom:24px">
+        <div class="box" style="text-align:center"><h3 style="font-size:28px;color:var(--brand)">28 h</h3><p>de formation</p></div>
+        <div class="box" style="text-align:center"><h3 style="font-size:28px;color:var(--brand)">4</h3><p>jours</p></div>
+        <div class="box" style="text-align:center"><h3 style="font-size:28px;color:var(--brand)">8</h3><p>demi-journées</p></div>
+        <div class="box" style="text-align:center"><h3 style="font-size:28px;color:var(--brand)">8</h3><p>livrables de terrain</p></div>
+      </div>
+      <div class="tbl">
+      <table>
+        <thead><tr><th></th><th>Matin</th><th>Après-midi</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Jour 1</strong></td><td><strong>Poser la méthode</strong><br>Distinguer les étapes, les rôles et les statuts d'information.<br><small style="color:var(--brand)">Livrable : brief de mission et chaîne fait / déclaration / hypothèse / recommandation</small></td><td><strong>Détecter et contacter</strong><br>Évaluer un signal, la source, le canal et la règle d'arrêt.<br><small style="color:var(--brand)">Livrable : fiche signal et décision de contact motivée</small></td></tr>
+          <tr><td><strong>Jour 2</strong></td><td><strong>Mesurer le marché</strong><br>Comparer les références, argumenter une fourchette et une stratégie.<br><small style="color:var(--brand)">Livrable : analyse comparative et note de prix</small></td><td><strong>Annonce et leads</strong><br>Auditer l'annonce et piloter le parcours de commercialisation.<br><small style="color:var(--brand)">Livrable : annonce optimisée, plan de diffusion et indicateurs</small></td></tr>
+          <tr><td><strong>Jour 3</strong></td><td><strong>Découverte acheteur / investisseur</strong><br>Utiliser QQOQCP, hiérarchiser les critères et clarifier le niveau de financement.<br><small style="color:var(--brand)">Livrable : fiche projet confirmée et plan de recherche</small></td><td><strong>Négociation et transaction</strong><br>Présenter une offre et suivre les jalons avec les bons relais.<br><small style="color:var(--brand)">Livrable : fiche offre, compte rendu et échéancier</small></td></tr>
+          <tr><td><strong>Jour 4</strong></td><td><strong>Portefeuille et relation client</strong><br>Prioriser, automatiser avec une règle d'arrêt et fidéliser sans pression.<br><small style="color:var(--brand)">Livrable : tableau de portefeuille et plan de suivi</small></td><td><strong>Intégration et évaluation</strong><br>Relier les sept étapes dans un dossier complet et transférer les acquis.<br><small style="color:var(--brand)">Livrable : cas fil rouge, grille de compétences et plan d'action à 30 jours</small></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h3 style="margin:40px 0 14px;font-size:22px">Critères communs de maîtrise</h3>
+      <div class="grid g3">
+        <div class="box"><p>La mission est cadrée et les priorités ont été confirmées.</p></div>
+        <div class="box"><p>Les sources, dates, limites et hypothèses sont visibles.</p></div>
+        <div class="box"><p>La validation humaine et le choix du client sont respectés.</p></div>
+        <div class="box"><p>Chaque action possède un responsable, une échéance et un résultat attendu.</p></div>
+        <div class="box"><p>Les options sont reliées aux critères du client et leurs compromis sont expliqués.</p></div>
+        <div class="box"><p>Une opposition ou une action devenue inutile déclenche un arrêt effectif.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapitre 9 -->
+  <section class="s">
+    <div class="wrap">
+      <span class="kicker">Chapitre 9</span>
+      <h2>Cadre de confiance et références</h2>
+      <p class="intro">La méthode Domaris est un référentiel de travail propriétaire. Elle ne remplace pas les obligations légales applicables, la vérification des pièces, le jugement du professionnel ni les conseils spécialisés. Elle ne constitue pas un avis juridique, financier, technique ou fiscal.</p>
+      <div class="grid g2">
+        <div class="box">
+          <span class="tag">Repère contrôlé le 30 septembre 2026</span>
+          <h3>Prospection téléphonique</h3>
+          <p>Le régime de consentement préalable pour la prospection commerciale téléphonique des consommateurs est entré en vigueur le <strong>11 août 2026</strong> (loi n° 2025-594 du 30 juin 2025, article 13). Le consentement doit satisfaire aux critères prévus par le Code et sa preuve doit être gérée selon la procédure de l'entreprise. Les exceptions, le statut de la personne et le traitement d'une opposition se vérifient au cas par cas. La règle ne se transpose pas automatiquement à d'autres canaux.</p>
+        </div>
+        <div class="box">
+          <h3>Données et contacts</h3>
+          <p style="margin-bottom:12px">Pour chaque source et canal, le professionnel vérifie :</p>
+          <span class="tag grey">la finalité</span><span class="tag grey">l'accès</span><span class="tag grey">l'usage permis</span><span class="tag grey">l'information de la personne</span><span class="tag grey">l'opposition</span><span class="tag grey">la durée de conservation</span>
+          <p style="margin-top:12px"><strong>La règle.</strong> Une donnée ouverte n'est pas une autorisation générale de démarcher. En cas de doute, demander conseil au référent conformité ou au conseil juridique.</p>
+        </div>
+        <div class="box">
+          <h3>Évaluation immobilière et limites</h3>
+          <p>Les références comparables doivent être pertinentes, datées et expliquées. Le conseiller rend visibles la méthode, les écarts et les limites. Les estimations algorithmiques sont des aides à l'analyse ; elles ne deviennent pas une expertise certifiée par leur seule présentation dans un outil.</p>
+        </div>
+        <div class="box">
+          <h3>Ressources officielles</h3>
+          <p>
+            <a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069565/LEGISCTA000032221441" target="_blank" rel="noopener">Code de la consommation, art. L.223-1 à L.223-7</a><br>
+            <a href="https://www.legifrance.gouv.fr/codes/id/LEGISCTA000054491445/2026-08-11" target="_blank" rel="noopener">Code de la consommation, R.223-1 à D.223-9</a><br>
+            <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000051824277" target="_blank" rel="noopener">Loi n° 2025-594 du 30 juin 2025, art. 13</a><br>
+            <a href="https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-postal" target="_blank" rel="noopener">CNIL : la prospection commerciale par courrier postal</a><br>
+            <a href="https://www.rics.org/profession-standards/rics-standards-and-guidance/sector-standards/valuation-standards/comparable-evidence-in-real-estate-valuation" target="_blank" rel="noopener">RICS : Comparable evidence in real estate valuation</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="dark" style="margin-top:48px">
+        <span class="kicker" style="color:#8ea2ff;position:relative;z-index:1">En une phrase</span>
+        <p style="position:relative;z-index:1;font-size:20px;line-height:1.5;color:#fff;margin:0;font-weight:500">Domaris aide le conseiller à <span class="accent">détecter</span> le bon sujet, <span class="accent">organiser</span> les preuves, <span class="accent">mesurer</span> la situation, <span class="accent">aligner</span> les priorités, <span class="accent">recommander</span> un chemin, <span class="accent">intervenir</span> avec accord et <span class="accent">suivre</span> jusqu'au bilan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap">
+      <div class="dark">
+        <h2>Garde la méthode <span class="accent">sous la main.</span></h2>
+        <p>Télécharge le référentiel complet de 24 pages, avec la fiche « point de décision partagé » à imprimer et à remplir avec tes clients.</p>
+        <div class="btns">
+          <a class="btn btn-white" href="assets/Domaris_Methode_detaillee.pdf" download>Télécharger le PDF</a>
+          <a class="btn btn-outline-w" href="https://domaris.immo" target="_blank" rel="noopener">Réserver une démo de Domaris →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo.svg" alt="Domaris">
+    <span>L'immobilier enfin de votre côté. · <a href="https://domaris.immo" target="_blank" rel="noopener">domaris.immo</a> · <a href="mailto:contact@domaris.immo">contact@domaris.immo</a></span>
+  </div>
+</footer>
+
+<script>
+/* ===== CONFIG : coller ici l'URL du déploiement Google Apps Script (se termine par /exec) ===== */
+const SHEET_ENDPOINT = "";
+/* ============================================================================================== */
+
+const STEPS = [
+  {l:"D",name:"Détecter",tag:"Repérer sans présumer",
+   desc:"Détecter consiste à identifier une piste, un besoin ou un actif qui peut justifier une vérification ou une conversation utile. Un signal du radar, une annonce ou une donnée de marché ne prouve pas à lui seul une intention de vente ni une volonté d'être contacté.",
+   actions:["Source et date","Fait observé","Fraîcheur et fiabilité","Droit d'accès et d'usage","Opposition ou règle d'arrêt","Territoire et objet","Hypothèse","Pertinence de la mission","Canal envisageable"],
+   questions:["Qu'est-ce qui est directement établi ?","Pourquoi cette information est-elle pertinente pour une mission immobilière ?","Quelle vérification éviterait de supposer ?"],
+   extra:{t:"IMV · Indice de maturité de vente",items:["S'il est disponible, afficher ses facteurs, leur date et leur niveau de fiabilité."]},
+   trace:["Fiche signal qualifiée","Statut de la source","Décision : vérifier, qualifier, attendre, ne pas contacter ou arrêter"],
+   vigil:"Ne pas déduire un projet personnel d'une caractéristique sensible ou d'une situation privée. L'IMV sert à prioriser une vérification ; il ne prouve ni intention de vendre ni consentement à être contacté. Rendre ses facteurs lisibles et corrigeables. Une donnée publiquement accessible n'autorise pas automatiquement toute réutilisation.",
+   pass:"Cette piste mérite-t-elle une vérification et quelle action est appropriée ?",
+   exit:"Passe à <b>Organiser</b> quand le sujet est assez pertinent et que la prochaine étape est appropriée. Pause ou arrêt si la source est douteuse, l'usage inadapté ou une opposition enregistrée."},
+  {l:"O",name:"Organiser",tag:"Préparer une mission compréhensible",
+   desc:"Organiser transforme une piste ou une demande en mission cadrée. L'agent vérifie qui participe à la décision, la finalité de l'accompagnement, les pièces disponibles, les rôles et le calendrier.",
+   actions:["Identité et rôle des interlocuteurs","Décideurs et parties prenantes","Bien ou zone","Informations manquantes","Prochain rendez-vous","Objectif du client","Calendrier","Pièces","Responsabilités"],
+   questions:["QQOQCP : Qui décide ? Quoi ? Où ? Quand ? Comment ? Combien ? Pourquoi ?","Qu'attendez-vous de notre prochain point ?"],
+   extra:{t:"Trois niveaux à ne pas confondre",items:["<b>Budget déclaré</b> : ce que le client annonce","<b>Capacité étudiée</b> : ce qu'une étude permet d'établir","<b>Financement confirmé</b> : ce que le financeur a confirmé"]},
+   trace:["Brief de mission","Checklist de pièces","Calendrier réaliste","Interlocuteur responsable","Liste de questions ouvertes"],
+   vigil:"Ne pas confondre budget déclaré, capacité étudiée et financement confirmé. Ne pas lancer des actions ou communiquer sans validation et autorisation appropriées.",
+   pass:"Le client, l'objectif et les responsabilités sont-ils assez clairs pour analyser ?",
+   exit:"Passe à <b>Mesurer</b> lorsque l'objet et les informations minimales nécessaires sont définis. Poursuivre la découverte si la finalité ou les décideurs restent flous."},
+  {l:"M",name:"Mesurer",tag:"Établir un diagnostic motivé",
+   desc:"Mesurer consiste à examiner le bien, le marché, les contraintes et les données disponibles. L'analyse documente sa méthode, ses comparables, ses hypothèses et ses limites.",
+   actions:["Caractéristiques et état du bien","Occupation","Annonces concurrentes","Contraintes connues","Pièces et diagnostics disponibles","Transactions comparables","Données de loyer et charges selon mission","Date et périmètre"],
+   questions:["Quelle donnée soutient cette conclusion ?","Qu'est-ce qui manque ?","Quelle référence est la plus comparable et pourquoi ?","Que faut-il faire vérifier ?"],
+   extra:{t:"Un diagnostic motivé documente",items:["<b>Méthode</b> : démarche suivie, date et périmètre","<b>Comparables</b> : références pertinentes, datées et expliquées","<b>Hypothèses</b> : interprétations à tester, signalées comme telles","<b>Limites</b> : inconnues nommées, vérifications demandées"]},
+   trace:["Diagnostic, analyse comparative ou étude de faisabilité","Sources datées","Fourchette ou scénarios lorsque pertinents","Limites et demandes de vérification"],
+   vigil:"Séparer prix affiché et prix de transaction quand les données le permettent. Ne pas présenter un calcul automatisé comme expertise certifiée. Ne pas inventer de coefficients précis sans preuve.",
+   pass:"Quelles preuves avons-nous et quelles inconnues changeraient le conseil ?",
+   exit:"Passe à <b>Aligner</b> lorsque les informations suffisent pour discuter de choix et que les inconnues importantes sont nommées. Sinon le dossier reste en vérification : pas de recommandation ferme sur une base fragile."},
+  {l:"A",name:"Aligner",tag:"Confirmer les critères de réussite",
+   desc:"Aligner relie les constats aux priorités réelles du client. L'agent fait hiérarchiser les critères, explicite les arbitrages et vérifie que l'objectif reformulé est confirmé.",
+   actions:["Priorité principale","Critères indispensables, souhaitables et négociables","Contraintes","Décideurs","Résultat souhaité","Calendrier","Niveau de risque acceptable","Indicateurs utiles"],
+   questions:["Qu'est-ce qui compte le plus entre prix, délai, sécurité, simplicité, rendement et discrétion ?","Qu'est-ce qui pourrait vous faire changer d'avis ?","Ai-je bien reformulé ?"],
+   extra:{t:"Hiérarchiser avec le client",items:["Le client classe lui-même ses critères (prix, délai, sécurité, simplicité, rendement, discrétion) en <b>indispensables</b>, <b>souhaitables</b> et <b>négociables</b>."]},
+   trace:["Objectif confirmé","Critères hiérarchisés","Indicateurs adaptés à la mission","Arbitrages compris","Décision attendue identifiée"],
+   vigil:"Ne pas imposer les critères de l'agent. Ne pas promettre qu'un objectif sera atteint parce qu'il a été formulé avec une échéance.",
+   pass:"Le client confirme-t-il les critères et l'objectif retenu ?",
+   exit:"Passe à <b>Recommander</b> quand le client reconnaît ses priorités et que les choix proposés peuvent être comparés à celles-ci. Sinon le dossier reste en vérification."},
+  {l:"R",name:"Recommander",tag:"Comparer les options et leurs compromis",
+   desc:"Recommander consiste à proposer une ou plusieurs options adaptées au projet, avec preuves, bénéfices, coûts, délais, risques et conditions de réussite. Le client conserve son choix.",
+   actions:["Éléments établis","Hypothèses","Options","Contraintes et coûts","Délai","Risques","Réversibilité","Critères confirmés","Conséquences d'un report ou d'une absence d'action"],
+   questions:["Quelle option respecte le mieux votre priorité ?","Quel compromis êtes-vous prêt à accepter ?","Quel élément doit encore être confirmé avant de choisir ?"],
+   extra:{t:"Modèle de scénarios comparés",items:["Option A · Option B · Reporter ou ne rien faire","Comparées sur : preuves, bénéfices, coûts, délais, risques, réversibilité, conditions de réussite","Choix du client et raisons consignés"]},
+   trace:["Note de recommandation","Scénarios comparés","Choix et raisons consignés","Action immédiate","Responsable et échéance"],
+   vigil:"Éviter la réponse opaque ou le scénario unique présenté comme inévitable. Ne pas garantir un prix, un délai, un rendement, un financement ou l'issue d'une négociation.",
+   pass:"Le client comprend-il les options, compromis et conséquences ?",
+   exit:"Passe à <b>Intervenir</b> lorsque le client confirme le scénario et que les prérequis, validations et responsabilités sont définis. Sinon l'étape reste ouverte."},
+  {l:"I",name:"Intervenir",tag:"Exécuter et coordonner le plan retenu",
+   desc:"Intervenir consiste à réaliser les actions validées, tenir le dossier à jour et coordonner les personnes nécessaires dans le périmètre de compétence du conseiller.",
+   actions:["Actions et autorisations","Documents à collecter","Diffusion et messages validés","Visites et retours","Offres","Échéances","Partenaires","Risques ou retards","Points nécessitant un spécialiste"],
+   questions:["L'action est-elle validée ?","Qui la réalise ?","À quelle date ?","Qui doit relire ou donner un avis spécialisé ?"],
+   extra:{t:"Du brouillon à la communication envoyée",items:["<b>1. Brouillon</b> préparé avec Domaris","<b>2. Relecture</b> : le conseiller vérifie toute sortie externe","<b>3. Validation</b> si la communication engage le dossier","<b>4. Envoi</b> : la communication sort de l'équipe","<b>5. Trace</b> : compte rendu et historique à jour"]},
+   trace:["Plan d'action actualisé","Messages relus","Comptes rendus","Statut des pièces","Historique des offres et décisions","Points d'escalade"],
+   vigil:"Ne pas confondre brouillon généré et communication envoyée. Le conseiller vérifie toute sortie externe. Transmettre au notaire, à la banque, au diagnostiqueur ou au conseil compétent les questions relevant de leur rôle.",
+   pass:"L'action a-t-elle été autorisée, contrôlée, affectée et datée ?",
+   exit:"Après chaque action, comparer le résultat aux critères. Une information nouvelle peut ramener à <b>Mesurer</b>, <b>Aligner</b> ou <b>Recommander</b>."},
+  {l:"S",name:"Suivre",tag:"Faire le bilan, ajuster ou clôturer",
+   desc:"Suivre organise les points d'étape jusqu'au résultat convenu et après la décision. Le conseiller compare les faits à l'objectif, explique les écarts et ajuste avec l'accord du client.",
+   actions:["Événements et résultats","Décisions en attente","Satisfaction","Actions obsolètes","Indicateurs","Prochaines échéances","Opposition","Règles de conservation applicables"],
+   questions:["Qu'avons-nous appris ?","Le résultat correspond-il à votre priorité ?","Que faut-il ajuster ?","Souhaitez-vous poursuivre ou clôturer ?"],
+   extra:{t:"Comparer les faits à l'objectif",items:["<b>1. Objectif</b> confirmé avec le client","<b>2. Faits</b> : événements, résultats, indicateurs","<b>3. Écarts</b> expliqués au client","<b>4. Ajustement</b> décidé avec l'accord du client"]},
+   trace:["Compte rendu périodique","Ajustement validé","Dossier clôturé ou suite planifiée","Bilan et prochaines échéances utiles"],
+   vigil:"Ne pas relancer par routine si le motif n'existe plus. Synchroniser une opposition selon la procédure et arrêter les sollicitations concernées. Limiter et conserver les données selon les règles applicables.",
+   pass:"Le dossier doit-il continuer, être ajusté ou être clôturé ?",
+   exit:"<b>Clôture</b> quand la mission est terminée, les actions devenues inutiles sont fermées et le client connaît la suite éventuelle. Sinon continuer ou ajuster, avec l'accord du client."}
+];
+
+const nav=document.getElementById('stepnav'), host=document.getElementById('steps');
+const li=a=>a.map(x=>`<li>${x}</li>`).join('');
+STEPS.forEach((s,i)=>{
+  const b=document.createElement('button');
+  b.type='button';b.setAttribute('role','tab');b.innerHTML=`<span>${s.l}</span>${s.name}`;
+  b.onclick=()=>show(i,true);nav.appendChild(b);
+  const d=document.createElement('article');d.className='step';d.setAttribute('role','tabpanel');
+  d.innerHTML=`
+    <div class="step-head"><div class="big">${s.l}</div><div><small>Étape ${i+1} sur 7</small><h3>${s.name}</h3></div></div>
+    <p class="desc"><b>${s.tag}.</b> ${s.desc}</p>
+    <div class="cols">
+      <div class="blk"><h4>Actions du conseiller</h4><ul>${li(s.actions)}</ul></div>
+      <div class="blk q"><h4>Questions utiles</h4><ul>${li(s.questions.map(q=>'« '+q+' »'))}</ul></div>
+      <div class="blk"><h4>${s.extra.t}</h4><ul>${li(s.extra.items)}</ul></div>
+      <div class="blk"><h4>Trace / livrable</h4><ul>${li(s.trace)}</ul></div>
+    </div>
+    <div class="blk warn" style="margin-top:16px"><h4>Points de vigilance</h4><p>${s.vigil}</p></div>
+    <div class="pass"><div><h4>Question de passage</h4><p class="qp">« ${s.pass} »</p></div><div><h4>Critère de sortie</h4><p>${s.exit}</p></div></div>
+    <div class="step-foot">
+      ${i>0?`<button class="btn btn-sm btn-ghost" type="button" data-go="${i-1}">← ${STEPS[i-1].name}</button>`:'<span></span>'}
+      ${i<6?`<button class="btn btn-sm btn-dark" type="button" data-go="${i+1}">${STEPS[i+1].name} →</button>`:'<span></span>'}
+    </div>`;
+  host.appendChild(d);
+});
+host.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g)show(+g.dataset.go,true)});
+function show(i,scroll){
+  [...nav.children].forEach((b,j)=>b.setAttribute('aria-selected',j===i));
+  [...host.children].forEach((d,j)=>d.classList.toggle('on',j===i));
+  if(scroll){const y=nav.getBoundingClientRect().top+scrollY-84;if(Math.abs(scrollY-y)>200)scrollTo({top:y,behavior:'smooth'})}
+}
+show(0,false);
+
+/* ===== Gate ===== */
+const KEY='domaris_methode_unlocked';
+function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function read(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function unlock(prenom,first){
+  document.body.classList.add('unlocked');
+  document.getElementById('topPdf').style.display='';
+  if(prenom)document.getElementById('welcomeText').textContent=`Merci ${prenom}, c'est débloqué. Voici la méthode Domaris en entier.`;
+  if(first)scrollTo({top:0});
+}
+const saved=read(KEY);
+if(saved){unlock(saved,false)}
+
+function normPhone(v){
+  let p=v.replace(/[\s.\-()]/g,'');
+  if(/^0[1-9]\d{8}$/.test(p))return p;
+  if(/^(\+|00)33[1-9]\d{8}$/.test(p))return '0'+p.slice(-9);
+  if(/^(\+|00)[1-9]\d{6,14}$/.test(p))return p.replace(/^00/,'+');
+  return null;
+}
+function utm(){const q=new URLSearchParams(location.search);return ['utm_source','utm_medium','utm_campaign','utm_content'].map(k=>q.get(k)||'').join('|').replace(/^\|+|\|+$/g,'')}
+
+const form=document.getElementById('leadForm');
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=id=>document.getElementById(id);
+  const prenom=f('prenom').value.trim(), nom=f('nom').value.trim(), tel=normPhone(f('tel').value), ok=f('consent').checked;
+  const checks=[[f('prenom'),prenom.length>=2],[f('nom'),nom.length>=2],[f('tel'),!!tel],[f('consent'),ok]];
+  let valid=true;
+  checks.forEach(([el,good])=>{el.closest('.field').classList.toggle('invalid',!good);if(el.type!=='checkbox')el.classList.toggle('err',!good);if(!good)valid=false});
+  if(!valid){const first=checks.find(c=>!c[1])[0];first.focus();return}
+  if(f('website').value)return; // bot
+
+  const btn=f('submitBtn');btn.disabled=true;btn.textContent='Envoi…';
+  const payload=new URLSearchParams({prenom,nom,telephone:tel,consentement:'oui',source:utm()||'linkedin',page:location.href,userAgent:navigator.userAgent});
+  try{
+    if(SHEET_ENDPOINT){
+      await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',body:payload});
+    }
+  }catch(err){console.warn('Envoi Sheet échoué',err)}
+  store(KEY,prenom);
+  unlock(prenom,true);
+});
+</script>
+</body>
+</html>
